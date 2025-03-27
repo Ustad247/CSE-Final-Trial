@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions' School For Excellence</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="title">Champions' School For Excellence</h1>
+        <nav class="nav-bar">
+            <!-- Hamburger Menu -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="class.html">Resources</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html" class="sign-out" onclick="handleSignOut(event)">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bubble Section for Username -->
+    <section class="bubble-container">
+        <div class="bubble">
+            <!-- Assuming username dynamically fetched -->
+            <p>Welcome, <span id="username-display">Guest</span>!</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Attractive Buttons -->
+        <div class="button-container">
+            <a href="main.html" class="button-link">Home</a>
+            <a href="class.html" class="button-link">Resources</a>
+            <a href="payment.html" class="button-link">Payment</a>
+            <a href="about.html" class="button-link">About Us</a>
+            <a href="index.html" class="button-link sign-out" onclick="handleSignOut(event)">Sign Out</a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer></footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Dynamically fetch username (this is just a placeholder for demonstration)
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = localStorage.getItem("username") || "Guest";
+            document.getElementById("username-display").textContent = username;
+        });
+
+        function handleSignOut(event) {
+            event.preventDefault(); // Prevent default redirection
+
+            // Redirect to index.html
+            window.location.replace("index.html");
+        }
+    </script>
+</body>
+</html>

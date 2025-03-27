@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions' School For Excellence</title>
+    <link rel="stylesheet" href="class.css"> <!-- Link to the updated CSS -->
+</head>
+<body>
+<header class="header">
+    <h1 class="title">Champions' School For Excellence</h1>
+    <nav class="nav-bar">
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="class.html" class="active">Resources</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html" class="sign-out" onclick="handleSignOut(event)">Sign Out</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content">
+    <h2>Resources</h2>
+    <div class="resource-buttons">
+        <button onclick="window.location.href='c1.html';" class="resource-btn">Class 1</button>
+        <button onclick="window.location.href='c2.html';" class="resource-btn">Class 2</button>
+        <button onclick="window.location.href='c3.html';" class="resource-btn">Class 3</button>
+        <button onclick="window.location.href='c4.html';" class="resource-btn">Class 4</button>
+        <button onclick="window.location.href='c5.html';" class="resource-btn">Class 5</button>
+        <button onclick="window.location.href='c6.html';" class="resource-btn">Class 6</button>
+        <button onclick="window.location.href='c7.html';" class="resource-btn">Class 7</button>
+    </div>
+</main>
+
+<footer class="footer">© 2025-26 Champions' School For Excellence</footer>
+
+<!-- JavaScript -->
+<script>
+    // Function to toggle the fullscreen menu
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show'); // Toggle the "show" class to display/hide the menu
+    }
+
+    // Function to handle sign-out
+    function handleSignOut(event) {
+        event.preventDefault(); // Prevent default redirection
+        // Redirect to index.html
+        window.location.replace("index.html");
+    }
+</script>
+</body>
+</html>
